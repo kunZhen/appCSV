@@ -6,10 +6,10 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appcsv.HelloController">
    <children>
-      <TableView prefHeight="425.0" prefWidth="666.0" />
-      <Button layoutX="226.0" layoutY="437.0" mnemonicParsing="false" text="Seleccionar archivo CSV">
+      <TableView fx:id="table" prefHeight="425.0" prefWidth="666.0" />
+      <Button layoutX="226.0" layoutY="437.0" mnemonicParsing="false" onAction="#getStudentsData" text="Seleccionar archivo CSV">
          <font>
             <Font size="18.0" />
          </font>
