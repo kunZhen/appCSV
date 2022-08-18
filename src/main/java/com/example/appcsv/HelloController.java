@@ -84,9 +84,12 @@ public class HelloController implements Initializable {
         TableColumn proyecto2Column = new TableColumn("Proyecto 2");
         TableColumn proyecto3Column = new TableColumn("Proyecto 3");
 
+        TableColumn promExamQuicesTareas = new TableColumn("Promedio (Examenes, quices, tareas)");
+        TableColumn promProyectos = new TableColumn("Promedio (Proyectos)");
+
         table.getColumns().addAll(carneColumn, nomApellidosColumn, correoColumn, telefonoColumn, nickNameColumn,
                 tipoEstudianteColumn, promExamenesColumn, promQuicesColumn, promTareasColumn, proyecto1Column,
-                proyecto2Column, proyecto3Column);
+                proyecto2Column, proyecto3Column, promExamQuicesTareas, promProyectos);
 
         carneColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("carne"));
         nomApellidosColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("nomApellidos"));
