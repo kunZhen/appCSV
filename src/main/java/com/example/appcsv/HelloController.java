@@ -43,13 +43,13 @@ public class HelloController implements Initializable {
                     String[] row = line.split(";");
 
                     // Categorizando al estudiante A y B
+                    System.out.println(row[5]);
 
-                    if (row[5] == "A") {
+                    if (row[5].equals("A")) {
                         studentsList.add(new StudentA(row[0], row[1], row[2], Integer.parseInt(row[3]), row[4],
                                 row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]),
                                 Integer.parseInt(row[9]), Integer.parseInt(row[10]), Integer.parseInt(row[11])));
                         System.out.println("A TRUE");
-
 
                     } else {
                         studentsList.add(new StudentB(row[0], row[1], row[2], Integer.parseInt(row[3]), row[4],
@@ -63,9 +63,10 @@ public class HelloController implements Initializable {
                     for (String index : row) {
                         System.out.printf("%-20s", index);
 
-                    } System.out.println(row[5] == "B");
+                    } System.out.println(((Object)row[5]).getClass().getSimpleName() != "String");
 
                     System.out.println();
+
 
                 }
             } catch (Exception e) {
