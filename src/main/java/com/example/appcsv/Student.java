@@ -14,11 +14,6 @@ public class Student {
     private int proyecto2;
     private int proyecto3;
 
-    /*private int promProyectos;
-
-    private int promExamQuizTarea;
-
-    private int notaFinal;*/
 
     public Student() { //Constructor: inicializa los atributos de la clase Student
         this.carne = "";
@@ -33,6 +28,7 @@ public class Student {
         this.proyecto1 = 0;
         this.proyecto2 = 0;
         this.proyecto3 = 0;
+
 
     }
 

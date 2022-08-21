@@ -41,14 +41,30 @@ public class HelloController implements Initializable {
                 while ((line = reader.readLine()) != null) {
 
                     String[] row = line.split(";");
-                    studentsList.add(new Student(row[0], row[1], row[2], Integer.parseInt(row[3]), row[4],
-                            row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]),
-                            Integer.parseInt(row[9]), Integer.parseInt(row[10]), Integer.parseInt(row[11])));
+
+                    // Categorizando al estudiante A y B
+
+                    if (row[5] == "A") {
+                        studentsList.add(new StudentA(row[0], row[1], row[2], Integer.parseInt(row[3]), row[4],
+                                row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]),
+                                Integer.parseInt(row[9]), Integer.parseInt(row[10]), Integer.parseInt(row[11])));
+                        System.out.println("A TRUE");
+
+
+                    } else {
+                        studentsList.add(new StudentB(row[0], row[1], row[2], Integer.parseInt(row[3]), row[4],
+                                row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]),
+                                Integer.parseInt(row[9]), Integer.parseInt(row[10]), Integer.parseInt(row[11])));
+                        System.out.println("B TRUE");
+
+                    }
+
 
                     for (String index : row) {
                         System.out.printf("%-20s", index);
 
-                    }
+                    } System.out.println(row[5] == "B");
+
                     System.out.println();
 
                 }
@@ -103,6 +119,9 @@ public class HelloController implements Initializable {
         proyecto1Column.setCellValueFactory(new PropertyValueFactory<Student, Integer>("proyecto1"));
         proyecto2Column.setCellValueFactory(new PropertyValueFactory<Student, Integer>("proyecto2"));
         proyecto3Column.setCellValueFactory(new PropertyValueFactory<Student, Integer>("proyecto3"));
+
+        promExamQuicesTareas.setCellValueFactory(new PropertyValueFactory<StudentA, Integer>("promExamQuizTarea"));
+        promProyectos.setCellValueFactory(new PropertyValueFactory<StudentB, Integer>("promProyectos"));
 
 
 
