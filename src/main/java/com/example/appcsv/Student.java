@@ -1,5 +1,6 @@
 package com.example.appcsv;
 
+
 public class Student {
     private String carne;
     private String nomApellidos;
@@ -13,6 +14,7 @@ public class Student {
     private int proyecto1;
     private int proyecto2;
     private int proyecto3;
+    private int notaFinal;
 
 
     public Student() { //Constructor: inicializa los atributos de la clase Student
@@ -28,12 +30,13 @@ public class Student {
         this.proyecto1 = 0;
         this.proyecto2 = 0;
         this.proyecto3 = 0;
+        this.notaFinal = 0;
 
 
     }
 
     public Student(String carne, String nomApellidos, String correo, int telefono, String nickName, String tipoEstudiante,
-                   int promExamenes, int promQuices, int promTareas, int proyecto1, int proyecto2, int proyecto3) {
+                   int promExamenes, int promQuices, int promTareas, int proyecto1, int proyecto2, int proyecto3, int notaFinal) {
         this.carne = carne;
         this.nomApellidos = nomApellidos;
         this.correo = correo;
@@ -46,6 +49,28 @@ public class Student {
         this.proyecto1 = proyecto1;
         this.proyecto2 = proyecto2;
         this.proyecto3 = proyecto3;
+
+        if (notaFinal == 6) {
+            calculateNotaFinal(promExamenes, promQuices, promTareas, proyecto1, proyecto2, proyecto3);
+        } else {
+            calculateNotaFinal(promExamenes, promQuices, promTareas, proyecto1, proyecto2);
+        }
+    }
+
+    public void calculateNotaFinal(int promExamenes, int promQuices, int promTareas, int proyecto1,
+                              int proyecto2, int proyecto3) {
+        int suma = promExamenes + promQuices + promTareas + proyecto1 + proyecto2 + proyecto3;
+        int prom = suma / 6;
+        setNotaFinal(prom);
+
+    }
+
+    public void calculateNotaFinal(int promExamenes, int promQuices, int promTareas, int proyecto1,
+                                   int proyecto2) {
+        int suma = promExamenes + promQuices + promTareas + proyecto1 + proyecto2;
+        int prom = suma / 5;
+        setNotaFinal(prom);
+
     }
 
     public String getCarne() {
@@ -144,4 +169,11 @@ public class Student {
         this.proyecto3 = proyecto3;
     }
 
+    public int getNotaFinal() {
+        return notaFinal;
+    }
+
+    public void setNotaFinal(int notaFinal) {
+        this.notaFinal = notaFinal;
+    }
 }

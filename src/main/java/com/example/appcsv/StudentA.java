@@ -5,9 +5,9 @@ public class StudentA extends Student{
     private String promProyectos = "";
 
     public StudentA(String carne, String nomApellidos, String correo, int telefono, String nickName, String tipoEstudiante,
-                    int promExamenes, int promQuices, int promTareas, int proyecto1, int proyecto2, int proyecto3) {
+                    int promExamenes, int promQuices, int promTareas, int proyecto1, int proyecto2, int proyecto3, int notaFinal) {
         super(carne, nomApellidos, correo, telefono, nickName, tipoEstudiante, promExamenes, promQuices, promTareas, proyecto1,
-                proyecto2, proyecto3);
+                proyecto2, proyecto3, notaFinal);
         this.promExamQuizTarea = calculatePromExamQuizTarea();
 
     }
@@ -19,7 +19,6 @@ public class StudentA extends Student{
 
         int suma = exam + quiz + tarea;
         int prom = suma / 3;
-        setPromExamQuizTarea(prom);
         return prom;
     }
 

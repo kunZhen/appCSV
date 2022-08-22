@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
@@ -44,17 +45,20 @@ public class HelloController implements Initializable {
 
                     // Categorizando al estudiante A y B
 
+                    Random random = new Random();
+                    int var = random.nextInt(2) + 5;
+
                     if (row[5].equals("A")) {
                         studentsList.add(new StudentA(row[0], row[1], row[2], Integer.parseInt(row[3]), row[4],
                                 row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]),
-                                Integer.parseInt(row[9]), Integer.parseInt(row[10]), Integer.parseInt(row[11])));
-                        System.out.println("A TRUE");
+                                Integer.parseInt(row[9]), Integer.parseInt(row[10]), Integer.parseInt(row[11]), var));
+                        System.out.println("A TRUE" + String.valueOf(var));
 
                     } else {
                         studentsList.add(new StudentB(row[0], row[1], row[2], Integer.parseInt(row[3]), row[4],
                                 row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]),
-                                Integer.parseInt(row[9]), Integer.parseInt(row[10]), Integer.parseInt(row[11])));
-                        System.out.println("B TRUE");
+                                Integer.parseInt(row[9]), Integer.parseInt(row[10]), Integer.parseInt(row[11]), var));
+                        System.out.println("B TRUE" + String.valueOf(var));
 
                     }
 
@@ -123,7 +127,7 @@ public class HelloController implements Initializable {
 
         promExamQuicesTareas.setCellValueFactory(new PropertyValueFactory<StudentA, Integer>("promExamQuizTarea"));
         promProyectos.setCellValueFactory(new PropertyValueFactory<StudentB, Integer>("promProyectos"));
-
+        notaFinal.setCellValueFactory(new PropertyValueFactory<Student, Integer>("notaFinal"));
 
 
 
