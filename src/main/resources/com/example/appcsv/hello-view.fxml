@@ -8,9 +8,9 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appcsv.HelloController">
    <children>
       <TableView fx:id="table" prefHeight="425.0" prefWidth="666.0" AnchorPane.bottomAnchor="51.666666666666686" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <Button layoutX="226.0" layoutY="437.0" mnemonicParsing="false" onAction="#getStudentsData" text="Seleccionar archivo CSV" AnchorPane.bottomAnchor="0.6666666666666643" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="226.66666666666666">
+      <Button layoutX="198.0" layoutY="425.0" mnemonicParsing="false" onAction="#getStudentsData" prefHeight="48.0" prefWidth="271.0" style="-fx-background-color: #9bdb7b;" text="Seleccionar archivo CSV" textAlignment="CENTER" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="197.0">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
    </children>

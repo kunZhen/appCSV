@@ -43,7 +43,6 @@ public class HelloController implements Initializable {
                     String[] row = line.split(";");
 
                     // Categorizando al estudiante A y B
-                    System.out.println(row[5]);
 
                     if (row[5].equals("A")) {
                         studentsList.add(new StudentA(row[0], row[1], row[2], Integer.parseInt(row[3]), row[4],
@@ -63,7 +62,7 @@ public class HelloController implements Initializable {
                     for (String index : row) {
                         System.out.printf("%-20s", index);
 
-                    } System.out.println(((Object)row[5]).getClass().getSimpleName() != "String");
+                    }
 
                     System.out.println();
 
@@ -103,10 +102,11 @@ public class HelloController implements Initializable {
 
         TableColumn promExamQuicesTareas = new TableColumn("Promedio (Examenes, quices, tareas)");
         TableColumn promProyectos = new TableColumn("Promedio (Proyectos)");
+        TableColumn notaFinal = new TableColumn("Nota final");
 
         table.getColumns().addAll(carneColumn, nomApellidosColumn, correoColumn, telefonoColumn, nickNameColumn,
                 tipoEstudianteColumn, promExamenesColumn, promQuicesColumn, promTareasColumn, proyecto1Column,
-                proyecto2Column, proyecto3Column, promExamQuicesTareas, promProyectos);
+                proyecto2Column, proyecto3Column, promExamQuicesTareas, promProyectos, notaFinal);
 
         carneColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("carne"));
         nomApellidosColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("nomApellidos"));
