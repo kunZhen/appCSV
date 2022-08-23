@@ -65,10 +65,18 @@ public class StudentB extends Student{
         this.promProyectos = promProyectos;
     }
 
+    /**
+     * Consigue el promedio de exámenes, quices, tareas
+     * @return promedio de exámenes, quices, tareas
+     */
     public String getPromExamQuizTarea() {
         return promExamQuizTarea;
     }
 
+    /**
+     * Actualiza el promedio de exámenes, quices, tareas
+     * @param promExamQuizTarea - promedio de exámenes, quices y tareas
+     */
     public void setPromExamQuizTarea(String promExamQuizTarea) {
         this.promExamQuizTarea = promExamQuizTarea;
     }
