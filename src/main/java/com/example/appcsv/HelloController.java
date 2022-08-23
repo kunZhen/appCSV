@@ -18,11 +18,18 @@ import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
 
+/**
+ * HelloController es una clase que permite controlar los eventos y acciones para el
+ * archivo fxml
+ */
 public class HelloController implements Initializable {
 
     @FXML
     private TableView<Student> table;
 
+    /**
+     * Método que se ejecuta cuando se presiona el botón
+     */
     @FXML
     void getStudentsData(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
@@ -89,6 +96,11 @@ public class HelloController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param url - hace referencia a la ubicación de la interfaz gráfica (el archivo fxml)
+     * @param resourceBundle - para traducir textos o modificar otra información dependiente de la configuración regional
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         TableColumn carneColumn = new TableColumn("Carne");
