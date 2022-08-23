@@ -5,6 +5,9 @@ package com.example.appcsv;
  *
  * Contienen información del tipo de estudiante B
  */
+/*
+La clase StudentB es una clase hija de Student
+ */
 public class StudentB extends Student{
 
     private int promProyectos;

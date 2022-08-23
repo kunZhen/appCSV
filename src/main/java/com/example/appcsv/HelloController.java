@@ -50,26 +50,38 @@ public class HelloController implements Initializable {
 
                     String[] row = line.split(";");
 
-                    // Categorizando al estudiante A y B
+
+                    /*
+                    Se agrega un random que indica valores 5 o 6, de manera que, estos vienen a
+                    ser la cantidad de rubros a evaluar por el profe para calular la nota final.
+                     */
 
                     Random random = new Random();
                     int var = random.nextInt(2) + 5;
 
+
+                    // Categorizando al estudiante A y B
+
+                    /*
+                    Las condicionales permiten identificar el tipo de estudiante a instanciar, de
+                    manera que, si el estudiante es de tipo A o B, se crea una instancia de dicho
+                    estudiante con sus respectivos atributos.
+                     */
                     if (row[5].equals("A")) {
                         studentsList.add(new StudentA(row[0], row[1], row[2], Integer.parseInt(row[3]), row[4],
                                 row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]),
                                 Integer.parseInt(row[9]), Integer.parseInt(row[10]), Integer.parseInt(row[11]), var));
-                        System.out.println("A TRUE" + String.valueOf(var));
+
 
                     } else {
                         studentsList.add(new StudentB(row[0], row[1], row[2], Integer.parseInt(row[3]), row[4],
                                 row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]),
                                 Integer.parseInt(row[9]), Integer.parseInt(row[10]), Integer.parseInt(row[11]), var));
-                        System.out.println("B TRUE" + String.valueOf(var));
+
 
                     }
 
-
+                    // Imprime cada estudiante creado
                     for (String index : row) {
                         System.out.printf("%-20s", index);
 
@@ -120,10 +132,12 @@ public class HelloController implements Initializable {
         TableColumn promProyectos = new TableColumn("Promedio (Proyectos)");
         TableColumn notaFinal = new TableColumn("Nota final");
 
+        // Se le agregan las columnas creadas a table
         table.getColumns().addAll(carneColumn, nomApellidosColumn, correoColumn, telefonoColumn, nickNameColumn,
                 tipoEstudianteColumn, promExamenesColumn, promQuicesColumn, promTareasColumn, proyecto1Column,
                 proyecto2Column, proyecto3Column, promExamQuicesTareas, promProyectos, notaFinal);
 
+        // se actualizan los valores de cada columna
         carneColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("carne"));
         nomApellidosColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("nomApellidos"));
         correoColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("correo"));

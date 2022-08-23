@@ -5,6 +5,12 @@ package com.example.appcsv;
  *
  * Contiene información de cada estudiante
  */
+/*
+La clase Student viene a ser un molde para la creación de estudiantes con sus respectivos atributos y métodos.
+La encapsulaciónn se evidencia a través de los métodos que fueron declarados como private, de manera que, estas
+solamente pueden ser accedidas o modificadas a través de sus métodos set y get que se definen al final.
+
+ */
 public class Student {
     private String carne;
     private String nomApellidos;
@@ -73,6 +79,15 @@ public class Student {
         this.proyecto2 = proyecto2;
         this.proyecto3 = proyecto3;
 
+        /*
+        Si el random indica que es 6, se le calcula la nota final con 6 rubros, siendo estos:
+        - Promedio de exámenes
+        - Promedio de quices
+        - Promedio de tareas
+        - Notas de proyecto 1, 2, y 3
+
+        En cambio, si son 5, se le calculan todas las anteriores menos el proyecto 3
+         */
         if (notaFinal == 6) {
             calculateNotaFinal(promExamenes, promQuices, promTareas, proyecto1, proyecto2, proyecto3);
         } else {
@@ -80,6 +95,10 @@ public class Student {
         }
     }
 
+    /*
+    Los métodos calculateNotaFinal evidencian la sobrecarga/overloading, pues presentan el mismo nombre,
+    pero con distinta cantidad de parámetros.
+     */
     /**
      *
      * @param promExamenes - promedio de exámenes

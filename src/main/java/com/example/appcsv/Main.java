@@ -12,6 +12,10 @@ import java.io.IOException;
 /**
  * Clase principal
  */
+/*
+La clase Application viene a ser una clase abstracta y para acceder a ella se hereda
+por la clase Main.
+ */
 public class Main extends Application {
 
     /**
@@ -21,6 +25,10 @@ public class Main extends Application {
      * un archivo que ya no existe; leer un archivo sin permiso,
      */
     @Override
+    /*
+    El método start viene a ser un método abstracto que proviene de la clase Application;
+    como se le hereda y se le realiza una sobreescritura, se le está aplicando el polimorfismo.
+     */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
